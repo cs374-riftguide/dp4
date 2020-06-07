@@ -51,46 +51,68 @@
           </div>
         </div>
       </header>
-      <search-results :value="searchResults" />
+      <search-results
+        :value="filteredSearchResults"
+        :search-text="searchText"
+        :is-search-text-too-short="isSearchTextTooShort"
+      />
     </div>
 
     <template id="template-search-results">
       <div class="search-results">
-        <div v-for="item in value" :key="item.id" class="search-result-item">
-          <div class="search-result-item__main">
-            <div class="search-result-item__title-box">
-              <div class="search-result-item__title">
-                {{ item.title }}
-              </div>
-              <div
-                class="search-result-item__tier"
-                :class="'search-result-item__tier--type-' + item.tier"
-              >
-                {{ item.tier }}
-              </div>
-            </div>
-            <div class="search-result-item__stats">
-              <div class="search-result-item__stats-entry">
-                Views: {{ item.views }}
-              </div>
-              <div class="search-result-item__stats-entry">
-                Created: {{ item.createdAtDate.toLocaleDateString({}, {
-                dateStyle: 'long' }) }}
-              </div>
-              <div class="search-result-item__stats-entry">
-                Upvotes: {{ item.upvotes }}
-              </div>
-            </div>
-          </div>
-          <div class="search-result-item__content-type-bar">
-            <div
-              v-for="contentType in item.contentTypes"
-              class="search-result-item__content-type-label"
-            >
-              {{ contentType }}
-            </div>
-          </div>
+        <div v-if="!searchText" class="search-results__info-message">
+          No search text entered
         </div>
+        <div
+          v-else-if="isSearchTextTooShort"
+          class="search-results__info-message"
+        >
+          The search text is too short--please enter more! (You entered
+          <code>"{{ searchText }}"</code>)
+        </div>
+        <div
+          v-else-if="value.length === 0"
+          class="search-results__info-message"
+        >
+          No match for <code>"{{ searchText }}"</code>
+        </div>
+        <template v-else>
+          <div v-for="item in value" :key="item.id" class="search-result-item">
+            <div class="search-result-item__main">
+              <div class="search-result-item__title-box">
+                <div class="search-result-item__title">
+                  {{ item.title }}
+                </div>
+                <div
+                  class="search-result-item__tier"
+                  :class="'search-result-item__tier--type-' + item.tier"
+                >
+                  {{ item.tier }}
+                </div>
+              </div>
+              <div class="search-result-item__stats">
+                <div class="search-result-item__stats-entry">
+                  Views: {{ item.views }}
+                </div>
+                <div class="search-result-item__stats-entry">
+                  Created: {{ item.createdAtDate.toLocaleDateString({}, {
+                  dateStyle: 'long' }) }}
+                </div>
+                <div class="search-result-item__stats-entry">
+                  Upvotes: {{ item.upvotes }}
+                </div>
+              </div>
+            </div>
+            <div class="search-result-item__content-type-bar">
+              <div
+                v-for="contentType in item.contentTypes"
+                class="search-result-item__content-type-label"
+              >
+                {{ contentType }}
+              </div>
+            </div>
+          </div>
+        </template>
       </div>
     </template>
 

@@ -41,17 +41,32 @@ const vm = new Vue({
   },
   computed: {
     /**
-     * @returns {SearchResultItem[]}
+     * Returns true if the search text is too short to trigger a search.
+     * @returns {boolean}
      */
-    searchResults() {
+    isSearchTextTooShort() {
+      return !this.searchText || this.searchText.length < 2;
+    },
+    /**
+     * Returns guides that match the current search text (`searchText`).
+     * @returns {Guide[]}
+     */
+    searchedGuides() {
       // Show nothing if the search text is less than 2 characters long
-      if (!this.searchText || this.searchText.length < 2) return [];
+      if (this.isSearchTextTooShort) return [];
 
-      /** @type {Guide[]} */
-      const results = this.fuse
+      return this.fuse
         .search(this.searchText)
         .map((resultItem) => resultItem.item);
-      return results
+    },
+    /**
+     * Returns search results filtered by currently active tier filters.
+     * @returns {SearchResultItem[]}
+     */
+    filteredSearchResults() {
+      /** @type {Guide[]} */
+      const searchedGuides = this.searchedGuides;
+      return searchedGuides
         .filter((guide) => this.activeTierFilters.includes(guide.tier))
         .map((guide) => {
           // Drop the 'content' key from the searchResultItem
