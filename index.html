@@ -14,7 +14,7 @@
 
     <template id="template-guide-box">
       <div class="guide-box">
-        <h1 class="guide-title">{{guide.title}}</h1>
+        <h2 class="guide-title">{{guide.title}}</h2>
         <address class="author"><b>Author: {{guide.author}}</b></address>
         <div class="body">
           <section v-for="(sentence, index) in guide.content">
@@ -26,10 +26,10 @@
               {{ sentence.type === 'text' ? 'Details' : 'Video' }}
             </button>
             <div v-show="hideOrShow[index]">
-              <p v-if="sentence.type === 'text'">
+              <div v-if="sentence.type === 'text'">
                 {{sentence.content}}
-              </p>
-              <p v-if="sentence.type === 'video'">
+              </div>
+              <div v-if="sentence.type === 'video'">
                 <iframe
                   width="560"
                   height="315"
@@ -38,7 +38,7 @@
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen
                 ></iframe>
-              </p>
+              </div>
             </div>
           </section>
         </div>
