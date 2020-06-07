@@ -7,6 +7,7 @@ const vm = new Vue({
   el: "#app",
   data: {
     activeTierFilters: [],
+    fuse: null,
     searchText: "",
     tierFilterTypes: {
       iron: {
@@ -43,13 +44,14 @@ const vm = new Vue({
      * @returns {SearchResultItem[]}
      */
     searchResults() {
-      // Since we don't have a search feature now, let's return an empty array
-      // if the search text is empty
-      if (!this.searchText) return [];
+      // Show nothing if the search text is less than 2 characters long
+      if (!this.searchText || this.searchText.length < 2) return [];
 
-      // If the search text is not empty, return the entire list of guides
-      // (filtered by tier)
-      return guides
+      /** @type {Guide[]} */
+      const results = this.fuse
+        .search(this.searchText)
+        .map((resultItem) => resultItem.item);
+      return results
         .filter((guide) => this.activeTierFilters.includes(guide.tier))
         .map((guide) => {
           // Drop the 'content' key from the searchResultItem
@@ -80,5 +82,21 @@ const vm = new Vue({
   mounted() {
     // Initially, all filters are active
     this.activeTierFilters = Object.keys(this.tierFilterTypes);
+
+    // Initialize Fuse.js
+    this.fuse = new Fuse(guides, {
+      keys: [
+        "title",
+        "author",
+        "content.type",
+        "content.summary",
+        "content.content",
+      ],
+      // Allow match at any point in string.
+      // For more info, see https://fusejs.io/concepts/scoring-theory.html
+      distance: 10000,
+      // The default threshold (0.6) feels too loose, so use a smaller value
+      threshold: 0.4,
+    });
   },
 });
