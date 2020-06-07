@@ -32,7 +32,14 @@
               </p>
 
               <p v-if="sentence.type == 'video'">
-                {{sentence.videoUrl}}
+                <iframe
+                  width="560"
+                  height="315"
+                  :src="sentence.videoUrl"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
               </p>
             </div>
             <!-- <p v-if="sentence.type = 'text'">{{sentence.content}}</p>
