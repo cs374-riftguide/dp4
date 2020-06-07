@@ -1,5 +1,6 @@
 // Sample data
 
+/** @type {Guide[]} */
 const guides = [
   {
     id: "guide-0",

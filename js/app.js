@@ -1,39 +1,5 @@
 // Main app goes here
 
-/**
- * @typedef {Object} Guide
- * @property {string} id
- * @property {string} title
- * @property {string} tier
- * @property {string} author
- * @property {string} createdAt
- * @property {number} upvotes
- * @property {number} downvotes
- * @property {number} views
- * @property {GuideContent[]} content
- */
-
-/**
- * @typedef {Object} GuideContent
- * @property {string} type
- * @property {string} summary
- * @property {string=} content
- * @property {string=} videoUrl
- */
-
-/**
- * @typedef {Object} SearchResultItem
- * @property {string} id
- * @property {string} title
- * @property {string} tier
- * @property {string} author
- * @property {Date} createdAtDate
- * @property {number} upvotes
- * @property {number} downvotes
- * @property {number} views
- * @property {string[]} contentTypes
- */
-
 const vm = new Vue({
   el: "#app",
   data: {
@@ -80,9 +46,18 @@ const vm = new Vue({
           // Drop the 'content' key from the searchResultItem
           const { content, createdAt, ...searchResultItem } = guide;
 
+          /**
+           * Type guard function to make TypeScript happy
+           * @param {GuideContentType} type
+           * @returns {type is Exclude<GuideContentType, 'empty'>}
+           */
+          function isNotEmptyType(type) {
+            return type !== "empty";
+          }
+
           // Get a unique set of content types, excluding the 'empty' type
           const contentTypes = new Set(
-            content.map((item) => item.type).filter((type) => type !== "empty")
+            content.map((item) => item.type).filter(isNotEmptyType)
           );
 
           return {
