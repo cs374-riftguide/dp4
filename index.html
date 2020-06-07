@@ -15,7 +15,7 @@
     <template id="template-page-guide">
       <div class="page-guide">
         <h2 class="guide-title">{{guide.title}}</h2>
-        <address class="author"><b>Author: {{guide.author}}</b></address>
+        <address class="author">Author: {{guide.author}}</address>
         <div class="body">
           <section v-for="(sentence, index) in guide.content">
             {{sentence.summary}}
