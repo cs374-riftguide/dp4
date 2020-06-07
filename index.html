@@ -8,7 +8,7 @@
   </head>
   <body>
     <div id="app">
-      <h1>RiftGuide</h1>
+      <h1 id="logo">RiftGuide</h1>
       <guide-box :guide="currentGuide" />
     </div>
 
@@ -16,7 +16,7 @@
       <div class="guide-box">
         <h1 class="guide-title">{{guide.title}}</h1>
 
-        <address class="author">Author: {{guide.author}}</address>
+        <address class="author"><b>Author: {{guide.author}}</b></address>
         <br />
 
         <div class="body">
@@ -65,6 +65,7 @@
             downvotes: {{guide.downvotes}}
           </div>
         </div>
+        <br />
       </div>
     </template>
 

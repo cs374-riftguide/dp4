@@ -1,24 +1,47 @@
-#app {
-  background-color: aqua;
+body {
+  background-image: url("./main.jfif");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.body {
-  background-color: bisque;
+#logo {
+  text-shadow: 1px 1px 5px black;
+  color: burlywood;
+  font-size: 40px;
+  padding: 20px;
 }
-.information {
-  background-color: cornflowerblue;
-  display: flex;
+.guide-box {
+  background-color: lightgoldenrodyellow;
+  padding: 10px;
+  margin: 20px;
+  opacity: 70%;
+  border-radius: 20px;
+  box-shadow: 1px 1px 10px black;
 }
-
 .information__item {
-  flex: 1;
+  /* /* float: left; */
+  display: inline;
+  background-color: rgb(224, 218, 127);
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
 }
-
-.number-of-likes {
-  background-color: darkorange;
-}
-.number-of-views {
-  background-color: greenyellow;
+button {
+  background-color: #a18e1f;
+  border-color: #c98225;
+  color: #fff;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  font-weight: 900;
+  font-size: 60%;
 }
 .guide-title {
-  background-color: orchid;
+  color: rgb(126, 117, 42);
+}
+iframe {
+  border-width: 5px;
+  border-color: rgb(245, 222, 14);
 }
