@@ -2,7 +2,6 @@
 
 const guides = [
   {
-    id: "guide-0",
     title: "Totally awesome Teemo guide",
     tier: "gold",
     author: "tom",
@@ -19,7 +18,7 @@ const guides = [
         type: "text",
         summary: "Step 2. Use Teemo's long attack range to poke",
         content:
-          "There are two ways of consuming the opponent's life.\n\n1. When your opponent wants to kill minions, attack him so that he cannot resist soon.\n Buy shoes ASAP to increase your speed, so that you can escape",
+          "There are two ways of consuming the opponent's life.\n1. When your opponent wants to kill minions, attack him so that he cannot resist soon.\n Buy shoes ASAP to increase your speed, so that you can escape",
       },
       {
         type: "video",
@@ -29,7 +28,6 @@ const guides = [
     ],
   },
   {
-    id: "guide-1",
     title: "Items must but ASAP for Teemo",
     tier: "diamond",
     author: "jack",
@@ -54,7 +52,6 @@ const guides = [
     ],
   },
   {
-    id: "guide-2",
     title: "Guides by SKT Faker",
     tier: "master",
     author: "Faker_Forever",
@@ -86,7 +83,6 @@ const guides = [
     ],
   },
   {
-    id: "guide-3",
     title: "Empty guide (for testing)",
     tier: "bronze",
     author: "SomeUser123",

@@ -7,7 +7,63 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <h1>RiftGuide</h1>
+
+      <div id="guidebox">
+        <h1 id="guidetitle">{{currentguide.title}}</h1>
+    
+
+
+        
+        <address id="author">Author: {{currentguide.author}}</address>
+        <br />
+
+        <div id="body">
+          <section v-for="(sentence,index) in currentguide.content">
+            {{sentence.summary}}
+            <button v-if="sentence.type == 'text'" v-on:click="ishow = !ishow">
+              details
+            </button>
+            <button v-if="sentence.type == 'video'" v-on:click="ishow = !ishow">
+              video
+            </button>
+
+            <div v-show="ishow">
+              <p v-if="sentence.type == 'text'">
+                {{sentence.content}}
+              </p>
+
+              <p v-if="sentence.type == 'video'">
+                {{sentence.videoUrl}}
+              </p>
+            </div>
+            <!-- <p v-if="sentence.type = 'text'">{{sentence.content}}</p>
+            <p v-if="sentence.type = 'video'">{{sentence.videoUrl}}</p> -->
+          </section>
+        </div>
+
+
+
+        <br />
+        <table id="information" width="100%">
+          <tr>
+            <td id="posteddate" width="25%">
+              posted date: {{currentguide.createdAt}}
+            </td>
+            <td id="numberofviews" width="25%">
+              views: {{currentguide.views}}
+            </td>
+            <td id="numberoflikes" withd="25%">
+              upvotes: {{currentguide.upvotes}}
+            </td>
+            <td id="numberofdislikes" width="25%">
+              downvotes: {{currentguide.downvotes}}
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
 
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
