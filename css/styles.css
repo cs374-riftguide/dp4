@@ -42,6 +42,11 @@ body {
   border: 1px solid black;
   border-radius: 6px;
   padding: 0 0.5em;
+  font-size: 75%;
+}
+
+.search-filter-item > label {
+  cursor: pointer;
 }
 
 .search-filter-item--type-iron {
@@ -87,6 +92,10 @@ body {
 .search-filter-item--type-challenger {
   background-color: var(--tier-bgcolor-challenger);
   color: var(--tier-text-color-challenger);
+}
+
+.search-fiter-item__icon {
+  width: 1em;
 }
 
 .search-filter-item__checkbox {

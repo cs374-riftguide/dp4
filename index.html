@@ -41,6 +41,10 @@
                 type="checkbox"
                 :value="filterType"
               />
+              <i
+                class="fas search-fiter-item__icon"
+                :class="activeTierFilters.includes(filterType) ? 'fa-check-square' : 'fa-square'"
+              ></i>
               {{ filterData.name }}
             </label>
           </div>
