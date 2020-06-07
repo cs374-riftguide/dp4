@@ -70,6 +70,12 @@
           The search text is too short--please enter more! (You entered
           <code>"{{ searchText }}"</code>)
         </div>
+        <div
+          v-else-if="value.length === 0"
+          class="search-results__info-message"
+        >
+          No match for <code>"{{ searchText }}"</code>
+        </div>
         <template v-else>
           <div v-for="item in value" :key="item.id" class="search-result-item">
             <div class="search-result-item__main">
