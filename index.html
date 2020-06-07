@@ -3,11 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Main Page</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <header class="search-form">
+        <div class="search-form__search-box">
+          <input
+            v-model="searchText"
+            class="search-form__search-input"
+            placeholder="Enter text to search"
+            type="text"
+          />
+          <button class="search-form__search-button">Search</button>
+        </div>
+        <div class="search-filter-box">
+          <div
+            v-for="(filterData, filterType)  in tierFilterTypes"
+            :key="filterType"
+            class="search-filter-item"
+            :class="'search-filter-item--type-' + filterType"
+          >
+            <label>
+              <input
+                v-model="activeTierFilters"
+                class="search-filter-item__checkbox"
+                type="checkbox"
+                :value="filterType"
+              />
+              {{ filterData.name }}
+            </label>
+          </div>
+        </div>
+      </header>
+      <div class="search-results">
+        <div
+          v-for="item in searchResults"
+          :key="item.id"
+          class="search-result-item"
+        >
+          <div class="search-result-item__main">
+            <div class="search-result-item__title-box">
+              <div class="search-result-item__title">
+                {{ item.title }}
+              </div>
+              <div class="search-result-item__tier">
+                {{ item.tier }}
+              </div>
+            </div>
+            <div class="search-result-item__stats">
+              <div class="search-result-item__stats-entry">
+                Views: {{ item.views }}
+              </div>
+              <div class="search-result-item__stats-entry">
+                Created: {{ item.createdAtDate.toLocaleDateString({}, {
+                dateStyle: 'long' }) }}
+              </div>
+              <div class="search-result-item__stats-entry">
+                Upvotes: {{ item.upvotes }}
+              </div>
+            </div>
+          </div>
+          <div class="search-result-item__content-type-bar">
+            <div
+              v-for="contentType in item.contentTypes"
+              class="search-result-item__content-type-label"
+            >
+              {{ contentType }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
