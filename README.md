@@ -7,3 +7,6 @@ This is the implementation of the Design Project 4 for team RiftGuide.
 * Yehyoung Kang
 * Yekwon Yoon
 * Yuan Huang
+
+##background image
+http://www.win4000.com/wallpaper_big_139912.html
