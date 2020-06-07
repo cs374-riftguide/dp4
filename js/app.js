@@ -79,15 +79,15 @@ const vm = new Vue({
         .map((guide) => {
           // Drop the 'content' key from the searchResultItem
           const { content, createdAt, ...searchResultItem } = guide;
-          const contentTypesObj = content.reduce((acc, guideContent) => {
-            // Exclude the 'empty' type
-            if (guideContent.type !== "empty") acc[guideContent.type] = true; // Dummy value
-            return acc;
-          }, {});
+
+          // Get a unique set of content types, excluding the 'empty' type
+          const contentTypes = new Set(
+            content.map((item) => item.type).filter((type) => type !== "empty")
+          );
 
           return {
             ...searchResultItem,
-            contentTypes: Object.keys(contentTypesObj).sort(),
+            contentTypes: Array.from(contentTypes).sort(),
             createdAtDate: new Date(createdAt),
           };
         });
