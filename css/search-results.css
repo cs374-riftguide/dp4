@@ -1,5 +1,11 @@
 /* Styles for the search-results component. */
 
+.search-results__info-message {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+}
+
 .search-result-item {
   display: flex;
   padding: 0.5em;
