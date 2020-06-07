@@ -9,15 +9,18 @@
   <body>
     <div id="app">
       <h1>RiftGuide</h1>
+      <guide-box :guide="currentGuide" />
+    </div>
 
+    <template id="template-guide-box">
       <div class="guide-box">
-        <h1 class="guide-title">{{currentGuide.title}}</h1>
+        <h1 class="guide-title">{{guide.title}}</h1>
 
-        <address class="author">Author: {{currentGuide.author}}</address>
+        <address class="author">Author: {{guide.author}}</address>
         <br />
 
         <div class="body">
-          <section v-for="(sentence,index) in currentGuide.content">
+          <section v-for="(sentence,index) in guide.content">
             {{sentence.summary}}
             <button
               v-if="sentence.type !== 'empty'"
@@ -50,20 +53,20 @@
         <br />
         <div class="information">
           <div class="information__item posted-date">
-            posted date: {{currentGuide.createdAt}}
+            posted date: {{guide.createdAt}}
           </div>
           <div class="information__item number-of-views">
-            views: {{currentGuide.views}}
+            views: {{guide.views}}
           </div>
           <div class="information__item number-of-likes">
-            upvotes: {{currentGuide.upvotes}}
+            upvotes: {{guide.upvotes}}
           </div>
           <div class="information__item number-of-dislikes">
-            downvotes: {{currentGuide.downvotes}}
+            downvotes: {{guide.downvotes}}
           </div>
         </div>
       </div>
-    </div>
+    </template>
 
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
