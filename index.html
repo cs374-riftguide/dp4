@@ -15,11 +15,9 @@
     <template id="template-guide-box">
       <div class="guide-box">
         <h1 class="guide-title">{{guide.title}}</h1>
-
         <address class="author"><b>Author: {{guide.author}}</b></address>
-
         <div class="body">
-          <section v-for="(sentence,index) in guide.content">
+          <section v-for="(sentence, index) in guide.content">
             {{sentence.summary}}
             <button
               v-if="sentence.type !== 'empty'"
@@ -27,12 +25,10 @@
             >
               {{ sentence.type === 'text' ? 'Details' : 'Video' }}
             </button>
-
             <div v-show="hideOrShow[index]">
               <p v-if="sentence.type === 'text'">
                 {{sentence.content}}
               </p>
-
               <p v-if="sentence.type === 'video'">
                 <iframe
                   width="560"
@@ -44,11 +40,8 @@
                 ></iframe>
               </p>
             </div>
-            <!-- <p v-if="sentence.type = 'text'">{{sentence.content}}</p>
-            <p v-if="sentence.type = 'video'">{{sentence.videoUrl}}</p> -->
           </section>
         </div>
-
         <div class="information">
           <div class="information__item posted-date">
             posted date: {{guide.createdAt}}

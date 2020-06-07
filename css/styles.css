@@ -3,12 +3,14 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 #logo {
   text-shadow: 1px 1px 5px black;
   color: burlywood;
   font-size: 40px;
   padding: 20px;
 }
+
 .guide-box {
   background-color: lightgoldenrodyellow;
   padding: 10px;
@@ -28,13 +30,13 @@ body {
 }
 
 .information__item {
-  /* /* float: left; */
   flex-grow: 0;
   background-color: rgb(224, 218, 127);
   border-radius: 20px;
   padding: 10px;
   text-align: center;
 }
+
 button {
   background-color: #a18e1f;
   border-color: #c98225;
@@ -48,9 +50,11 @@ button {
   font-weight: 900;
   font-size: 60%;
 }
+
 .guide-title {
   color: rgb(126, 117, 42);
 }
+
 iframe {
   border-width: 5px;
   border-color: rgb(245, 222, 14);
