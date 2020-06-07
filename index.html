@@ -17,7 +17,6 @@
         <h1 class="guide-title">{{guide.title}}</h1>
 
         <address class="author"><b>Author: {{guide.author}}</b></address>
-        <br />
 
         <div class="body">
           <section v-for="(sentence,index) in guide.content">
@@ -50,7 +49,6 @@
           </section>
         </div>
 
-        <br />
         <div class="information">
           <div class="information__item posted-date">
             posted date: {{guide.createdAt}}
@@ -65,7 +63,6 @@
             downvotes: {{guide.downvotes}}
           </div>
         </div>
-        <br />
       </div>
     </template>
 
