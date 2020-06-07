@@ -13,50 +13,57 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.css"
     />
+    <link rel="stylesheet" href="./css/page-search.css" />
     <link rel="stylesheet" href="./css/search-results.css" />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
     <div id="app">
-      <header class="search-form">
-        <div class="search-form__search-box">
-          <input
-            v-model="searchText"
-            class="search-form__search-input"
-            placeholder="Enter text to search"
-            type="text"
-          />
-          <button class="search-form__search-button">Search</button>
-        </div>
-        <div class="search-filter-box">
-          <div
-            v-for="(filterData, filterType)  in tierFilterTypes"
-            :key="filterType"
-            class="search-filter-item"
-            :class="'search-filter-item--type-' + filterType"
-          >
-            <label>
-              <input
-                v-model="activeTierFilters"
-                class="search-filter-item__checkbox"
-                type="checkbox"
-                :value="filterType"
-              />
-              <i
-                class="fas search-fiter-item__icon"
-                :class="activeTierFilters.includes(filterType) ? 'fa-check-square' : 'fa-square'"
-              ></i>
-              {{ filterData.name }}
-            </label>
-          </div>
-        </div>
-      </header>
-      <search-results
-        :value="filteredSearchResults"
-        :search-text="searchText"
-        :is-search-text-too-short="isSearchTextTooShort"
-      />
+      <page-search :guides="guides" />
     </div>
+
+    <template id="template-page-search">
+      <div class="page-search">
+        <header class="search-form">
+          <div class="search-form__search-box">
+            <input
+              v-model="searchText"
+              class="search-form__search-input"
+              placeholder="Enter text to search"
+              type="text"
+            />
+            <button class="search-form__search-button">Search</button>
+          </div>
+          <div class="search-filter-box">
+            <div
+              v-for="(filterData, filterType)  in tierFilterTypes"
+              :key="filterType"
+              class="search-filter-item"
+              :class="'search-filter-item--type-' + filterType"
+            >
+              <label>
+                <input
+                  v-model="activeTierFilters"
+                  class="search-filter-item__checkbox"
+                  type="checkbox"
+                  :value="filterType"
+                />
+                <i
+                  class="fas search-fiter-item__icon"
+                  :class="activeTierFilters.includes(filterType) ? 'fa-check-square' : 'fa-square'"
+                ></i>
+                {{ filterData.name }}
+              </label>
+            </div>
+          </div>
+        </header>
+        <search-results
+          :value="filteredSearchResults"
+          :search-text="searchText"
+          :is-search-text-too-short="isSearchTextTooShort"
+        />
+      </div>
+    </template>
 
     <template id="template-search-results">
       <div class="search-results">
@@ -122,6 +129,7 @@
     <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
     <script src="./js/data.js"></script>
     <!-- Component scripts must come before the main app script -->
+    <script src="./js/page-search.js"></script>
     <script src="./js/search-results.js"></script>
     <script src="./js/app.js"></script>
   </body>
