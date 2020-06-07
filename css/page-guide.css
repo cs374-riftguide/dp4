@@ -1,0 +1,55 @@
+/* Styles for the page-guide component. */
+
+.page-guide {
+  background-color: lightgoldenrodyellow;
+  padding: 10px;
+  padding-bottom: 1.5em;
+  margin: 20px;
+  opacity: 70%;
+  border-radius: 20px;
+  box-shadow: 1px 1px 10px black;
+}
+
+.page-guide__author {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.page-guide__body {
+  margin: 1em 0;
+}
+
+.page-guide__stats {
+  display: flex;
+}
+
+.page-guide__stats-item {
+  flex-grow: 0;
+  background-color: rgb(224, 218, 127);
+  border-radius: 20px;
+  padding: 10px;
+  text-align: center;
+}
+
+.page-guide__section-expand-button {
+  background-color: #a18e1f;
+  border-color: #c98225;
+  color: #fff;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  font-weight: 900;
+  font-size: 60%;
+}
+
+.page-guide__title {
+  color: rgb(126, 117, 42);
+}
+
+.page-guide__video {
+  border-width: 5px;
+  border-color: rgb(245, 222, 14);
+}
