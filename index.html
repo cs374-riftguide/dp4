@@ -48,7 +48,10 @@
               <div class="search-result-item__title">
                 {{ item.title }}
               </div>
-              <div class="search-result-item__tier">
+              <div
+                class="search-result-item__tier"
+                :class="'search-result-item__tier--type-' + item.tier"
+              >
                 {{ item.tier }}
               </div>
             </div>
