@@ -17,9 +17,14 @@ body {
   border-radius: 20px;
   box-shadow: 1px 1px 10px black;
 }
+
+.information {
+  display: flex;
+}
+
 .information__item {
   /* /* float: left; */
-  display: inline;
+  flex-grow: 0;
   background-color: rgb(224, 218, 127);
   border-radius: 20px;
   padding: 10px;
