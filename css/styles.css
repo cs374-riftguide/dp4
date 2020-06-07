@@ -2,6 +2,37 @@ body {
   background-image: url("../images/main1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: "Noto Sans KR", "Roboto", sans-serif;
+}
+
+#app {
+  /* For debugging */
+  border: 1px dotted black;
+  box-sizing: border-box;
+  max-width: 800px;
+  /* Center alignment */
+  margin: auto;
+}
+
+:root {
+  --tier-bgcolor-iron: #222;
+  --tier-text-color-iron: #fff;
+  --tier-bgcolor-bronze: #732;
+  --tier-text-color-bronze: #fff;
+  --tier-bgcolor-silver: #999;
+  --tier-text-color-silver: #fff;
+  --tier-bgcolor-gold: #ca0;
+  --tier-text-color-gold: #fff;
+  --tier-bgcolor-platinum: #bbb;
+  --tier-text-color-platinum: #fff;
+  --tier-bgcolor-diamond: #eee;
+  --tier-text-color-diamond: #000;
+  --tier-bgcolor-master: #fac;
+  --tier-text-color-master: #000;
+  --tier-bgcolor-grandmaster: #c4a;
+  --tier-text-color-grandmaster: #fff;
+  --tier-bgcolor-challenger: #808;
+  --tier-text-color-challenger: #fff;
 }
 
 .logo {

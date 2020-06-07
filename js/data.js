@@ -1,7 +1,11 @@
 // Sample data
 
+/// <reference path="./index.d.ts" />
+
+/** @type {Guide[]} */
 const guides = [
   {
+    id: "guide-0",
     title: "Totally awesome Teemo guide",
     tier: "gold",
     author: "tom",
@@ -28,6 +32,7 @@ const guides = [
     ],
   },
   {
+    id: "guide-1",
     title: "Items must but ASAP for Teemo",
     tier: "diamond",
     author: "jack",
@@ -52,6 +57,7 @@ const guides = [
     ],
   },
   {
+    id: "guide-2",
     title: "Guides by SKT Faker",
     tier: "master",
     author: "Faker_Forever",
@@ -83,6 +89,7 @@ const guides = [
     ],
   },
   {
+    id: "guide-3",
     title: "Empty guide (for testing)",
     tier: "bronze",
     author: "SomeUser123",

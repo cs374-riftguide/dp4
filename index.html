@@ -3,8 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Main Page</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto|Noto+Sans+KR"
+    />
+    <!-- Development version; use all-min.css for production -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.css"
+    />
     <link rel="stylesheet" href="./css/page-guide.css" />
+    <link rel="stylesheet" href="./css/page-search.css" />
+    <link rel="stylesheet" href="./css/search-results.css" />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
@@ -65,10 +76,116 @@
       </div>
     </template>
 
+    <template id="template-page-search">
+      <div class="page-search">
+        <header class="search-form">
+          <div class="search-form__search-box">
+            <input
+              v-model="searchText"
+              class="search-form__search-input"
+              placeholder="Enter text to search"
+              type="text"
+            />
+            <button class="search-form__search-button">Search</button>
+          </div>
+          <div class="search-filter-box">
+            <div
+              v-for="(filterData, filterType)  in tierFilterTypes"
+              :key="filterType"
+              class="search-filter-item"
+              :class="'search-filter-item--type-' + filterType"
+            >
+              <label>
+                <input
+                  v-model="activeTierFilters"
+                  class="search-filter-item__checkbox"
+                  type="checkbox"
+                  :value="filterType"
+                />
+                <i
+                  class="fas search-fiter-item__icon"
+                  :class="activeTierFilters.includes(filterType) ? 'fa-check-square' : 'fa-square'"
+                ></i>
+                {{ filterData.name }}
+              </label>
+            </div>
+          </div>
+        </header>
+        <search-results
+          :value="filteredSearchResults"
+          :search-text="searchText"
+          :is-search-text-too-short="isSearchTextTooShort"
+        />
+      </div>
+    </template>
+
+    <template id="template-search-results">
+      <div class="search-results">
+        <div v-if="!searchText" class="search-results__info-message">
+          No search text entered
+        </div>
+        <div
+          v-else-if="isSearchTextTooShort"
+          class="search-results__info-message"
+        >
+          The search text is too short--please enter more! (You entered
+          <code>"{{ searchText }}"</code>)
+        </div>
+        <div
+          v-else-if="value.length === 0"
+          class="search-results__info-message"
+        >
+          No match for <code>"{{ searchText }}"</code>
+        </div>
+        <template v-else>
+          <div v-for="item in value" :key="item.id" class="search-result-item">
+            <div class="search-result-item__main">
+              <div class="search-result-item__title-box">
+                <div class="search-result-item__title">
+                  {{ item.title }}
+                </div>
+                <div
+                  class="search-result-item__tier"
+                  :class="'search-result-item__tier--type-' + item.tier"
+                >
+                  {{ item.tier }}
+                </div>
+              </div>
+              <div class="search-result-item__stats">
+                <div class="search-result-item__stats-entry">
+                  Views: {{ item.views }}
+                </div>
+                <div class="search-result-item__stats-entry">
+                  Created: {{ item.createdAtDate.toLocaleDateString({}, {
+                  dateStyle: 'long' }) }}
+                </div>
+                <div class="search-result-item__stats-entry">
+                  Upvotes: {{ item.upvotes }}
+                </div>
+              </div>
+            </div>
+            <div class="search-result-item__content-type-bar">
+              <div
+                v-for="contentType in item.contentTypes"
+                class="search-result-item__content-type-label"
+              >
+                {{ contentType }}
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+    </template>
+
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- Development version with all features -->
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
     <script src="./js/data.js"></script>
+    <!-- Component scripts must come before the main app script -->
     <script src="./js/page-guide.js"></script>
+    <script src="./js/page-search.js"></script>
+    <script src="./js/search-results.js"></script>
     <script src="./js/app.js"></script>
   </body>
 </html>
