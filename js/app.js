@@ -6,6 +6,6 @@ new Vue({
     currentguide: guides[0],
     Index: 0,
     ishow: 0,
-    
+    hideorshow:show = new Array()
   },
 });

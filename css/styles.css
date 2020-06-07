@@ -1,18 +1,20 @@
-/* #app {
+#app {
   background-color: aqua;
 }
-#body {
+.body {
   background-color: bisque;
 }
-#information {
+.information {
   background-color: cornflowerblue;
 }
-#author {
+.guide-title {
   background-color: darkorange;
 }
-#guidebox {
+.number-of-views {
   background-color: greenyellow;
 }
-#guidetitle {
+.guide-title {
   background-color: orchid;
-} */
+}
+
+

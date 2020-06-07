@@ -10,22 +10,19 @@
     <div id="app">
       <h1>RiftGuide</h1>
 
-      <div id="guidebox">
-        <h1 id="guidetitle">{{currentguide.title}}</h1>
+      <div class="guide-box">
+        <h1 class="guide-title">{{currentguide.title}}</h1>
     
-
-
-        
-        <address id="author">Author: {{currentguide.author}}</address>
+        <address class="author">Author: {{currentguide.author}}</address>
         <br />
 
-        <div id="body">
+        <div class="body">
           <section v-for="(sentence,index) in currentguide.content">
             {{sentence.summary}}
-            <button v-if="sentence.type == 'text'" v-on:click="ishow = !ishow">
+            <button v-if="sentence.type == 'text'" v-on:click="ishow[index] = !ishow">
               details
             </button>
-            <button v-if="sentence.type == 'video'" v-on:click="ishow = !ishow">
+            <button v-if="sentence.type == 'video'" v-on:click="ishow[index] = !ishow">
               video
             </button>
 
@@ -43,21 +40,19 @@
           </section>
         </div>
 
-
-
         <br />
-        <table id="information" width="100%">
+        <table class="information" width="100%">
           <tr>
-            <td id="posteddate" width="25%">
+            <td class="posted-date" width="25%">
               posted date: {{currentguide.createdAt}}
             </td>
-            <td id="numberofviews" width="25%">
+            <td class="number-of-views" width="25%">
               views: {{currentguide.views}}
             </td>
-            <td id="numberoflikes" withd="25%">
+            <td class="number-of-likes" withd="25%">
               upvotes: {{currentguide.upvotes}}
             </td>
-            <td id="numberofdislikes" width="25%">
+            <td class="number-of-dislikes" width="25%">
               downvotes: {{currentguide.downvotes}}
             </td>
           </tr>
