@@ -5,6 +5,36 @@
 
 /// <reference path="./index.d.ts" />
 
+const tierFilterTypes = {
+  iron: {
+    name: "Iron",
+  },
+  bronze: {
+    name: "Bronze",
+  },
+  silver: {
+    name: "Silver",
+  },
+  gold: {
+    name: "Gold",
+  },
+  platinum: {
+    name: "Platinum",
+  },
+  diamond: {
+    name: "Diamond",
+  },
+  master: {
+    name: "Master",
+  },
+  grandmaster: {
+    name: "Grandmaster",
+  },
+  challenger: {
+    name: "Challenger",
+  },
+};
+
 Vue.component("page-search", {
   props: {
     guides: {
@@ -14,38 +44,10 @@ Vue.component("page-search", {
   },
   data() {
     return {
-      activeTierFilters: [],
+      activeTierFilters: Object.values(tierFilterTypes).map(({ name }) => name),
       fuse: null,
       searchText: "",
-      tierFilterTypes: {
-        iron: {
-          name: "Iron",
-        },
-        bronze: {
-          name: "Bronze",
-        },
-        silver: {
-          name: "Silver",
-        },
-        gold: {
-          name: "Gold",
-        },
-        platinum: {
-          name: "Platinum",
-        },
-        diamond: {
-          name: "Diamond",
-        },
-        master: {
-          name: "Master",
-        },
-        grandmaster: {
-          name: "Grandmaster",
-        },
-        challenger: {
-          name: "Challenger",
-        },
-      },
+      tierFilterTypes,
     };
   },
   computed: {
@@ -104,9 +106,6 @@ Vue.component("page-search", {
     },
   },
   mounted() {
-    // Initially, all filters are active
-    this.activeTierFilters = Object.keys(this.tierFilterTypes);
-
     // Initialize Fuse.js
     this.fuse = new Fuse(this.guides, {
       keys: [
