@@ -13,3 +13,4 @@ This is the implementation of the Design Project 4 for team RiftGuide.
 Our project uses the following frameworks and libraries.
 
 * [Vue.js](https://vuejs.org/)
+* [Fuse.js](https://fusejs.io/)
