@@ -1,3 +1,7 @@
+body {
+  font-family: "Noto Sans KR", "Roboto", sans-serif;
+}
+
 #app {
   /* For debugging */
   border: 1px dotted black;
