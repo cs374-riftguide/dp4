@@ -8,29 +8,34 @@
   </head>
   <body>
     <div id="app">
-      <h1 id="logo">RiftGuide</h1>
+      <h1 class="logo">RiftGuide</h1>
       <page-guide :guide="currentGuide" />
     </div>
 
     <template id="template-page-guide">
       <div class="page-guide">
-        <h2 class="guide-title">{{guide.title}}</h2>
-        <address class="author">Author: {{guide.author}}</address>
-        <div class="body">
-          <section v-for="(sentence, index) in guide.content">
+        <h2 class="page-guide__title">{{guide.title}}</h2>
+        <address class="page-guide__author">Author: {{guide.author}}</address>
+        <div class="page-guide__body">
+          <section
+            v-for="(sentence, index) in guide.content"
+            class="page-guide__section"
+          >
             {{sentence.summary}}
             <button
               v-if="sentence.type !== 'empty'"
               v-on:click="toggleSection(index)"
+              class="page-guide__section-expand-button"
             >
               {{ sentence.type === 'text' ? 'Details' : 'Video' }}
             </button>
-            <div v-show="hideOrShow[index]">
+            <div v-show="hideOrShow[index]" class="page-guide__section-details">
               <div v-if="sentence.type === 'text'">
                 {{sentence.content}}
               </div>
               <div v-if="sentence.type === 'video'">
                 <iframe
+                  class="page-guide__video"
                   width="560"
                   height="315"
                   :src="sentence.videoUrl"
@@ -42,17 +47,17 @@
             </div>
           </section>
         </div>
-        <div class="information">
-          <div class="information__item posted-date">
+        <div class="page-guide__stats">
+          <div class="page-guide__stats-item">
             posted date: {{guide.createdAt}}
           </div>
-          <div class="information__item number-of-views">
+          <div class="page-guide__stats-item">
             views: {{guide.views}}
           </div>
-          <div class="information__item number-of-likes">
+          <div class="page-guide__stats-item">
             upvotes: {{guide.upvotes}}
           </div>
-          <div class="information__item number-of-dislikes">
+          <div class="page-guide__stats-item">
             downvotes: {{guide.downvotes}}
           </div>
         </div>

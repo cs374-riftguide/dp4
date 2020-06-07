@@ -4,7 +4,7 @@ body {
   background-size: cover;
 }
 
-#logo {
+.logo {
   text-shadow: 1px 1px 5px black;
   color: burlywood;
   font-size: 40px;
@@ -21,20 +21,20 @@ body {
   box-shadow: 1px 1px 10px black;
 }
 
-.author {
+.page-guide__author {
   font-style: italic;
   font-weight: bold;
 }
 
-.body {
+.page-guide__body {
   margin: 1em 0;
 }
 
-.information {
+.page-guide__stats {
   display: flex;
 }
 
-.information__item {
+.page-guide__stats-item {
   flex-grow: 0;
   background-color: rgb(224, 218, 127);
   border-radius: 20px;
@@ -42,7 +42,7 @@ body {
   text-align: center;
 }
 
-button {
+.page-guide__section-expand-button {
   background-color: #a18e1f;
   border-color: #c98225;
   color: #fff;
@@ -56,11 +56,11 @@ button {
   font-size: 60%;
 }
 
-.guide-title {
+.page-guide__title {
   color: rgb(126, 117, 42);
 }
 
-iframe {
+.page-guide__video {
   border-width: 5px;
   border-color: rgb(245, 222, 14);
 }
