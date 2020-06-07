@@ -6,6 +6,9 @@ const vm = new Vue({
     activeTierFilters: [],
     searchText: "",
     tierFilterTypes: {
+      iron: {
+        name: "Iron",
+      },
       bronze: {
         name: "Bronze",
       },
@@ -23,6 +26,9 @@ const vm = new Vue({
       },
       master: {
         name: "Master",
+      },
+      grandmaster: {
+        name: "Grandmaster",
       },
       challenger: {
         name: "Challenger",
