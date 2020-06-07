@@ -11,13 +11,13 @@
       <h1>RiftGuide</h1>
 
       <div class="guide-box">
-        <h1 class="guide-title">{{currentguide.title}}</h1>
+        <h1 class="guide-title">{{currentGuide.title}}</h1>
 
-        <address class="author">Author: {{currentguide.author}}</address>
+        <address class="author">Author: {{currentGuide.author}}</address>
         <br />
 
         <div class="body">
-          <section v-for="(sentence,index) in currentguide.content">
+          <section v-for="(sentence,index) in currentGuide.content">
             {{sentence.summary}}
             <button
               v-if="sentence.type !== 'empty'"
@@ -26,12 +26,12 @@
               {{ sentence.type === 'text' ? 'Details' : 'Video' }}
             </button>
 
-            <div v-show="hideorshow[index]">
-              <p v-if="sentence.type == 'text'">
+            <div v-show="hideOrShow[index]">
+              <p v-if="sentence.type === 'text'">
                 {{sentence.content}}
               </p>
 
-              <p v-if="sentence.type == 'video'">
+              <p v-if="sentence.type === 'video'">
                 <iframe
                   width="560"
                   height="315"
@@ -50,16 +50,16 @@
         <br />
         <div class="information">
           <div class="information__item posted-date">
-            posted date: {{currentguide.createdAt}}
+            posted date: {{currentGuide.createdAt}}
           </div>
           <div class="information__item number-of-views">
-            views: {{currentguide.views}}
+            views: {{currentGuide.views}}
           </div>
           <div class="information__item number-of-likes">
-            upvotes: {{currentguide.upvotes}}
+            upvotes: {{currentGuide.upvotes}}
           </div>
           <div class="information__item number-of-dislikes">
-            downvotes: {{currentguide.downvotes}}
+            downvotes: {{currentGuide.downvotes}}
           </div>
         </div>
       </div>
