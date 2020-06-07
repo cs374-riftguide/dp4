@@ -44,7 +44,7 @@ Vue.component("page-search", {
   },
   data() {
     return {
-      activeTierFilters: Object.values(tierFilterTypes).map(({ name }) => name),
+      activeTierFilters: Object.keys(tierFilterTypes),
       fuse: null,
       searchText: "",
       tierFilterTypes,
