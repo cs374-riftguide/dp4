@@ -6,6 +6,15 @@ new Vue({
     currentguide: guides[0],
     Index: 0,
     ishow: 0,
-    hideorshow:show = new Array()
+    hideorshow: [],
+  },
+  methods: {
+    /**
+     * Shows or hides a section.
+     * @param {number} sectionIndex Index of the section to show/hide.
+     */
+    toggleSection(sectionIndex) {
+      Vue.set(this.hideorshow, sectionIndex, !this.hideorshow[sectionIndex]);
+    },
   },
 });

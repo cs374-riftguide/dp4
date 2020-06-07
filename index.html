@@ -20,19 +20,13 @@
           <section v-for="(sentence,index) in currentguide.content">
             {{sentence.summary}}
             <button
-              v-if="sentence.type == 'text'"
-              v-on:click="ishow[index] = !ishow"
+              v-if="sentence.type !== 'empty'"
+              v-on:click="toggleSection(index)"
             >
-              details
-            </button>
-            <button
-              v-if="sentence.type == 'video'"
-              v-on:click="ishow[index] = !ishow"
-            >
-              video
+              {{ sentence.type === 'text' ? 'Details' : 'Video' }}
             </button>
 
-            <div v-show="ishow">
+            <div v-show="hideorshow[index]">
               <p v-if="sentence.type == 'text'">
                 {{sentence.content}}
               </p>
