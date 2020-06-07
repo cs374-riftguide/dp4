@@ -6,8 +6,14 @@
 }
 .information {
   background-color: cornflowerblue;
+  display: flex;
 }
-.guide-title {
+
+.information__item {
+  flex: 1;
+}
+
+.number-of-likes {
   background-color: darkorange;
 }
 .number-of-views {
@@ -16,5 +22,3 @@
 .guide-title {
   background-color: orchid;
 }
-
-

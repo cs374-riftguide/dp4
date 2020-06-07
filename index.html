@@ -12,17 +12,23 @@
 
       <div class="guide-box">
         <h1 class="guide-title">{{currentguide.title}}</h1>
-    
+
         <address class="author">Author: {{currentguide.author}}</address>
         <br />
 
         <div class="body">
           <section v-for="(sentence,index) in currentguide.content">
             {{sentence.summary}}
-            <button v-if="sentence.type == 'text'" v-on:click="ishow[index] = !ishow">
+            <button
+              v-if="sentence.type == 'text'"
+              v-on:click="ishow[index] = !ishow"
+            >
               details
             </button>
-            <button v-if="sentence.type == 'video'" v-on:click="ishow[index] = !ishow">
+            <button
+              v-if="sentence.type == 'video'"
+              v-on:click="ishow[index] = !ishow"
+            >
               video
             </button>
 
@@ -41,22 +47,20 @@
         </div>
 
         <br />
-        <table class="information" width="100%">
-          <tr>
-            <td class="posted-date" width="25%">
-              posted date: {{currentguide.createdAt}}
-            </td>
-            <td class="number-of-views" width="25%">
-              views: {{currentguide.views}}
-            </td>
-            <td class="number-of-likes" withd="25%">
-              upvotes: {{currentguide.upvotes}}
-            </td>
-            <td class="number-of-dislikes" width="25%">
-              downvotes: {{currentguide.downvotes}}
-            </td>
-          </tr>
-        </table>
+        <div class="information">
+          <div class="information__item posted-date">
+            posted date: {{currentguide.createdAt}}
+          </div>
+          <div class="information__item number-of-views">
+            views: {{currentguide.views}}
+          </div>
+          <div class="information__item number-of-likes">
+            upvotes: {{currentguide.upvotes}}
+          </div>
+          <div class="information__item number-of-dislikes">
+            downvotes: {{currentguide.downvotes}}
+          </div>
+        </div>
       </div>
     </div>
 
