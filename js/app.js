@@ -1,7 +1,7 @@
 // Main app goes here
 
-Vue.component("guide-box", {
-  template: "#template-guide-box",
+Vue.component("page-guide", {
+  template: "#template-page-guide",
   props: {
     guide: Object,
   },

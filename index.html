@@ -9,11 +9,11 @@
   <body>
     <div id="app">
       <h1 id="logo">RiftGuide</h1>
-      <guide-box :guide="currentGuide" />
+      <page-guide :guide="currentGuide" />
     </div>
 
-    <template id="template-guide-box">
-      <div class="guide-box">
+    <template id="template-page-guide">
+      <div class="page-guide">
         <h2 class="guide-title">{{guide.title}}</h2>
         <address class="author"><b>Author: {{guide.author}}</b></address>
         <div class="body">
