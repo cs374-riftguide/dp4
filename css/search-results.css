@@ -1,0 +1,97 @@
+/* Styles for the search-results component. */
+
+.search-result-item {
+  display: flex;
+  padding: 0.5em;
+}
+
+.search-result-item:hover {
+  background-color: #eee;
+}
+
+.search-result-item__main {
+  flex-grow: 1;
+}
+
+.search-result-item__title-box {
+  display: flex;
+  align-items: baseline;
+}
+
+.search-result-item__title {
+  font-size: 150%;
+  font-weight: bold;
+}
+
+.search-result-item__tier {
+  margin-left: 0.5em;
+  border: 1px solid black;
+  border-radius: 6px;
+  padding: 0 0.5em;
+}
+
+.search-result-item__tier--type-iron {
+  background-color: var(--tier-bgcolor-iron);
+  color: var(--tier-text-color-iron);
+}
+
+.search-result-item__tier--type-bronze {
+  background-color: var(--tier-bgcolor-bronze);
+  color: var(--tier-text-color-bronze);
+}
+
+.search-result-item__tier--type-silver {
+  background-color: var(--tier-bgcolor-silver);
+  color: var(--tier-text-color-silver);
+}
+
+.search-result-item__tier--type-gold {
+  background-color: var(--tier-bgcolor-gold);
+  color: var(--tier-text-color-gold);
+}
+
+.search-result-item__tier--type-platinum {
+  background-color: var(--tier-bgcolor-platinum);
+  color: var(--tier-text-color-platinum);
+}
+
+.search-result-item__tier--type-diamond {
+  background-color: var(--tier-bgcolor-diamond);
+  color: var(--tier-text-color-diamond);
+}
+
+.search-result-item__tier--type-master {
+  background-color: var(--tier-bgcolor-master);
+  color: var(--tier-text-color-master);
+}
+
+.search-result-item__tier--type-grandmaster {
+  background-color: var(--tier-bgcolor-grandmaster);
+  color: var(--tier-text-color-grandmaster);
+}
+
+.search-result-item__tier--type-challenger {
+  background-color: var(--tier-bgcolor-challenger);
+  color: var(--tier-text-color-challenger);
+}
+
+.search-result-item__stats {
+  display: flex;
+  margin-top: 0.5em;
+}
+
+.search-result-item__stats-entry {
+  flex: 1;
+}
+
+.search-result-item__content-type-bar {
+  width: 5em;
+}
+
+.search-result-item__content-type-label {
+  margin: 0.5em;
+  border-radius: 10px;
+  background-color: #777;
+  color: #fff;
+  text-align: center;
+}

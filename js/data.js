@@ -1,5 +1,8 @@
 // Sample data
 
+/// <reference path="./index.d.ts" />
+
+/** @type {Guide[]} */
 const guides = [
   {
     id: "guide-0",
