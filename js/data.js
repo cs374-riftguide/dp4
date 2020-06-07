@@ -22,12 +22,12 @@ const guides = [
         type: "text",
         summary: "Step 2. Use Teemo's long attack range to poke",
         content:
-          "There are two ways of consuming the opponent's life.\n\n1. When your opponent wants to kill minions, attack him so that he cannot resist soon.\n Buy shoes ASAP to increase your speed, so that you can escape",
+          "There are two ways of consuming the opponent's life.\n1. When your opponent wants to kill minions, attack him so that he cannot resist soon.\n Buy shoes ASAP to increase your speed, so that you can escape",
       },
       {
         type: "video",
         summary: "Plant mushrooms along the wall to prevent ganks",
-        videoUrl: "https://www.youtube.com/watch?v=UVmgwL3tOAg",
+        videoUrl: "https://www.youtube.com/embed?v=UVmgwL3tOAg",
       },
     ],
   },
@@ -52,7 +52,7 @@ const guides = [
       {
         type: "video",
         summary: "Plant mushrooms along the wall to prevent ganks",
-        videoUrl: "https://www.youtube.com/watch?v=UVmgwL3tOAg",
+        videoUrl: "https://www.youtube.com/embed?v=UVmgwL3tOAg",
       },
     ],
   },
@@ -69,22 +69,22 @@ const guides = [
       {
         type: "video",
         summary: "HOW TO READ THE MAP by Faker",
-        videoUrl: "https://www.youtube.com/watch?v=-iD8Ab05N1s",
+        videoUrl: "https://www.youtube.com/embed?v=-iD8Ab05N1s",
       },
       {
         type: "video",
         summary: "RYZE GUIDE by Faker",
-        videoUrl: "https://www.youtube.com/watch?v=Pd5dp2f_yUg",
+        videoUrl: "https://www.youtube.com/embed?v=Pd5dp2f_yUg",
       },
       {
         type: "video",
         summary: "Unique ZED GUIDE by Faker",
-        videoUrl: "https://www.youtube.com/watch?v=mvGVELBadT8",
+        videoUrl: "https://www.youtube.com/embed?v=mvGVELBadT8",
       },
       {
         type: "video",
         summary: "Faker's HOW TO ZOE",
-        videoUrl: "https://www.youtube.com/watch?v=18kgAyq0Rxw",
+        videoUrl: "https://www.youtube.com/embed?v=18kgAyq0Rxw",
       },
     ],
   },

@@ -13,14 +13,68 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.css"
     />
+    <link rel="stylesheet" href="./css/page-guide.css" />
     <link rel="stylesheet" href="./css/page-search.css" />
     <link rel="stylesheet" href="./css/search-results.css" />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
     <div id="app">
-      <page-search :guides="guides" />
+      <h1 class="logo">RiftGuide</h1>
+      <page-guide :guide="currentGuide" />
     </div>
+
+    <template id="template-page-guide">
+      <div class="page-guide">
+        <h2 class="page-guide__title">{{guide.title}}</h2>
+        <address class="page-guide__author">Author: {{guide.author}}</address>
+        <div class="page-guide__body">
+          <section
+            v-for="(sentence, index) in guide.content"
+            class="page-guide__section"
+          >
+            {{sentence.summary}}
+            <button
+              v-if="sentence.type !== 'empty'"
+              v-on:click="toggleSection(index)"
+              class="page-guide__section-expand-button"
+            >
+              {{ sentence.type === 'text' ? 'Details' : 'Video' }}
+            </button>
+            <div v-show="hideOrShow[index]" class="page-guide__section-details">
+              <div v-if="sentence.type === 'text'">
+                {{sentence.content}}
+              </div>
+              <div v-if="sentence.type === 'video'">
+                <iframe
+                  class="page-guide__video"
+                  width="560"
+                  height="315"
+                  :src="sentence.videoUrl"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="page-guide__stats">
+          <div class="page-guide__stats-item">
+            posted date: {{guide.createdAt}}
+          </div>
+          <div class="page-guide__stats-item">
+            views: {{guide.views}}
+          </div>
+          <div class="page-guide__stats-item">
+            upvotes: {{guide.upvotes}}
+          </div>
+          <div class="page-guide__stats-item">
+            downvotes: {{guide.downvotes}}
+          </div>
+        </div>
+      </div>
+    </template>
 
     <template id="template-page-search">
       <div class="page-search">
@@ -129,6 +183,7 @@
     <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
     <script src="./js/data.js"></script>
     <!-- Component scripts must come before the main app script -->
+    <script src="./js/page-guide.js"></script>
     <script src="./js/page-search.js"></script>
     <script src="./js/search-results.js"></script>
     <script src="./js/app.js"></script>

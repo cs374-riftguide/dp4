@@ -6,6 +6,7 @@
 const vm = new Vue({
   el: "#app",
   data: {
+    currentGuide: guides[0],
     guides: guides,
   },
 });

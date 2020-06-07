@@ -1,4 +1,7 @@
 body {
+  background-image: url("../images/main1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: "Noto Sans KR", "Roboto", sans-serif;
 }
 
@@ -30,4 +33,11 @@ body {
   --tier-text-color-grandmaster: #fff;
   --tier-bgcolor-challenger: #808;
   --tier-text-color-challenger: #fff;
+}
+
+.logo {
+  text-shadow: 1px 1px 5px black;
+  color: burlywood;
+  font-size: 40px;
+  padding: 20px;
 }
