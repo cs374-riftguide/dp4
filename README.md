@@ -7,3 +7,9 @@ This is the implementation of the Design Project 4 for team RiftGuide.
 * Yehyoung Kang
 * Yekwon Yoon
 * Yuan Huang
+
+## Frameworks and Libraries Used
+
+Our project uses the following frameworks and libraries.
+
+* [Vue.js](https://vuejs.org/)
