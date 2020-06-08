@@ -53,14 +53,16 @@
             v-for="(sentence, index) in guide.content"
             class="page-guide__section"
           >
-            {{sentence.summary}}
-            <button
-              v-if="sentence.type !== 'empty'"
-              v-on:click="toggleSection(index)"
-              class="page-guide__section-expand-button"
-            >
-              {{ sentence.type === 'text' ? 'Details' : 'Video' }}
-            </button>
+            <h3 class="page-guide__section-title">
+              {{sentence.summary}}
+              <button
+                v-if="sentence.type !== 'empty'"
+                v-on:click="toggleSection(index)"
+                class="page-guide__section-expand-button"
+              >
+                {{ sentence.type === 'text' ? 'Details' : 'Video' }}
+              </button>
+            </h3>
             <div v-show="hideOrShow[index]" class="page-guide__section-details">
               <div v-if="sentence.type === 'text'">
                 {{sentence.content}}
