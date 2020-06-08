@@ -27,7 +27,7 @@ const guides = [
       {
         type: "video",
         summary: "Plant mushrooms along the wall to prevent ganks",
-        videoUrl: "https://www.youtube.com/embed?v=UVmgwL3tOAg",
+        videoUrl: "https://www.youtube.com/embed/UVmgwL3tOAg",
       },
     ],
   },
@@ -52,7 +52,7 @@ const guides = [
       {
         type: "video",
         summary: "Plant mushrooms along the wall to prevent ganks",
-        videoUrl: "https://www.youtube.com/embed?v=UVmgwL3tOAg",
+        videoUrl: "https://www.youtube.com/embed/UVmgwL3tOAg",
       },
     ],
   },
@@ -69,22 +69,22 @@ const guides = [
       {
         type: "video",
         summary: "HOW TO READ THE MAP by Faker",
-        videoUrl: "https://www.youtube.com/embed?v=-iD8Ab05N1s",
+        videoUrl: "https://www.youtube.com/embed/-iD8Ab05N1s",
       },
       {
         type: "video",
         summary: "RYZE GUIDE by Faker",
-        videoUrl: "https://www.youtube.com/embed?v=Pd5dp2f_yUg",
+        videoUrl: "https://www.youtube.com/embed/Pd5dp2f_yUg",
       },
       {
         type: "video",
         summary: "Unique ZED GUIDE by Faker",
-        videoUrl: "https://www.youtube.com/embed?v=mvGVELBadT8",
+        videoUrl: "https://www.youtube.com/embed/mvGVELBadT8",
       },
       {
         type: "video",
         summary: "Faker's HOW TO ZOE",
-        videoUrl: "https://www.youtube.com/embed?v=18kgAyq0Rxw",
+        videoUrl: "https://www.youtube.com/embed/18kgAyq0Rxw",
       },
     ],
   },
@@ -123,7 +123,7 @@ const guides = [
       {
         type: "video",
         summary: "Example of how to control lanes to win",
-        videoUrl: "https://www.youtube.com/embed?v=UVmgwL3tOAg",
+        videoUrl: "https://www.youtube.com/embed/UVmgwL3tOAg",
       },
     ],
   },
@@ -162,12 +162,12 @@ const guides = [
       {
         type: "video",
         summary: "Combo to delete full-hp enemy",
-        videoUrl: "https://www.youtube.com/embed?v=UVmgwL3tOAg",
+        videoUrl: "https://www.youtube.com/embed/UVmgwL3tOAg",
       },
       {
         type: "video",
         summary: "Combo to chase low-hp enemy",
-        videoUrl: "https://www.youtube.com/embed?v=UVmgwL3tOAg",
+        videoUrl: "https://www.youtube.com/embed/UVmgwL3tOAg",
       },
     ],
   },
@@ -184,7 +184,7 @@ const guides = [
       {
         type: "video",
         summary: "Madmovie of Challenger Wukong player Monkey",
-        videoUrl: "https://www.youtube.com/embed?v=UVmgwL3tOAg",
+        videoUrl: "https://www.youtube.com/embed/UVmgwL3tOAg",
       },
       {
         type: "text",
@@ -221,7 +221,7 @@ const guides = [
       {
         type: "video",
         summary: "Pray Montage",
-        videoUrl: "https://www.youtube.com/embed?v=UVmgwL3tOAg",
+        videoUrl: "https://www.youtube.com/embed/UVmgwL3tOAg",
       },
     ],
   },
