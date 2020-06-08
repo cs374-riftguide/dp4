@@ -101,6 +101,7 @@ Vue.component("page-search", {
             ...searchResultItem,
             contentTypes: Array.from(contentTypes).sort(),
             createdAtDate: new Date(createdAt),
+            tierName: this.tierFilterTypes[guide.tier].name,
           };
         });
     },
