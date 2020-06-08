@@ -3,12 +3,13 @@
 /// <reference path="./index.d.ts" />
 /// <reference path="./data.js" />
 
-const vm = new Vue({
-  el: "#app",
-  data: {
-    currentGuide: guides[0],
-    currentPage: "search",
-    guides: guides,
+const App = Vue.extend({
+  data() {
+    return {
+      currentGuide: guides[0],
+      currentPage: "search",
+      guides: guides,
+    };
   },
   methods: {
     /**
@@ -29,4 +30,8 @@ const vm = new Vue({
       this.currentPage = "search";
     },
   },
+});
+
+const vm = new App({
+  el: "#app",
 });
