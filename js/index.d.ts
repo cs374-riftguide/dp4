@@ -15,7 +15,7 @@ type GuideTier =
 interface Guide {
   id: string;
   title: string;
-  tier: GuideTier;
+  tiers: GuideTier[];
   author: string;
   createdAt: string;
   upvotes: number;
@@ -36,8 +36,8 @@ interface GuideContent {
 interface SearchResultItem {
   id: string;
   title: string;
-  tier: GuideTier;
-  tierName: string;
+  tiers: GuideTier[];
+  tierNames: string[];
   author: string;
   createdAtDate: Date;
   upvotes: number;
