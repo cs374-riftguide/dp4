@@ -26,7 +26,16 @@
 
     <template id="template-page-guide">
       <div class="page-guide">
-        <h2 class="page-guide__title">{{guide.title}}</h2>
+        <header class="page-guide__header">
+          <h2 class="page-guide__title">{{guide.title}}</h2>
+          <button
+            class="page-guide__close-button"
+            title="Close guide"
+            @click="$emit('guide-close')"
+          >
+            <i class="fas fa-arrow-circle-left"></i>
+          </button>
+        </header>
         <address class="page-guide__author">Author: {{guide.author}}</address>
         <div class="page-guide__body">
           <section
