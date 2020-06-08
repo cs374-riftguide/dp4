@@ -7,7 +7,7 @@ const guides = [
   {
     id: "guide-0",
     title: "Totally awesome Teemo guide",
-    tier: "gold",
+    tiers: ["gold"],
     author: "tom",
     createdAt: "2020-06-06T13:39:41.382Z",
     upvotes: 100,
@@ -34,7 +34,7 @@ const guides = [
   {
     id: "guide-1",
     title: "Items must but ASAP for Teemo",
-    tier: "diamond",
+    tiers: ["diamond"],
     author: "jack",
     createdAt: "2020-05-12T14:20:21.382Z",
     upvotes: 10000,
@@ -59,7 +59,7 @@ const guides = [
   {
     id: "guide-2",
     title: "Guides by SKT Faker",
-    tier: "master",
+    tiers: ["master"],
     author: "Faker_Forever",
     createdAt: "2020-05-01T04:25:25.382Z",
     upvotes: 9433,
@@ -91,7 +91,7 @@ const guides = [
   {
     id: "guide-3",
     title: "Empty guide (for testing)",
-    tier: "bronze",
+    tiers: ["bronze"],
     author: "SomeUser123",
     createdAt: "2020-05-15T06:21:45.448Z",
     upvotes: 12,

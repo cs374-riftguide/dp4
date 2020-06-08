@@ -78,8 +78,9 @@ Vue.component("page-search", {
     filteredSearchResults() {
       /** @type {Guide[]} */
       const searchedGuides = this.searchedGuides;
+      const activeTiers = new Set(this.activeTierFilters);
       return searchedGuides
-        .filter((guide) => this.activeTierFilters.includes(guide.tier))
+        .filter((guide) => guide.tiers.some((tier) => activeTiers.has(tier)))
         .map((guide) => {
           // Drop the 'content' key from the searchResultItem
           const { content, createdAt, ...searchResultItem } = guide;
@@ -97,12 +98,14 @@ Vue.component("page-search", {
           const contentTypes = new Set(
             content.map((item) => item.type).filter(isNotEmptyType)
           );
+          /** @type {{ [key in GuideTier]: { name: string } }} */
+          const tierFilterTypes = this.tierFilterTypes;
 
           return {
             ...searchResultItem,
             contentTypes: Array.from(contentTypes).sort(),
             createdAtDate: new Date(createdAt),
-            tierName: this.tierFilterTypes[guide.tier].name,
+            tierNames: guide.tiers.map((tier) => tierFilterTypes[tier].name),
           };
         });
     },

@@ -170,10 +170,11 @@
                   {{ item.title }}
                 </div>
                 <div
+                  v-for="(tier, tierIndex) in item.tiers"
                   class="search-result-item__tier"
-                  :class="'search-result-item__tier--type-' + item.tier"
+                  :class="'search-result-item__tier--type-' + tier"
                 >
-                  {{ item.tierName }}
+                  {{ item.tierNames[tierIndex] }}
                 </div>
               </div>
               <div class="search-result-item__stats">
