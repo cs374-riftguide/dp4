@@ -124,6 +124,7 @@
           :value="filteredSearchResults"
           :search-text="searchText"
           :is-search-text-too-short="isSearchTextTooShort"
+          @guide-open="$emit('guide-open', ...arguments)"
         />
       </div>
     </template>
