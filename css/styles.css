@@ -6,9 +6,6 @@ body {
 }
 
 #app {
-  /* For debugging */
-  border: 1px dotted black;
-  box-sizing: border-box;
   max-width: 800px;
   /* Center alignment */
   margin: auto;
