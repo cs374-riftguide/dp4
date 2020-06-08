@@ -30,7 +30,7 @@
 
 .search-result-item__title-box {
   display: flex;
-  align-items: baseline;
+  align-items: flex-start;
 }
 
 .search-result-item__title {
@@ -38,11 +38,17 @@
   font-weight: bold;
 }
 
+.search-result-item__tier-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .search-result-item__tier {
   margin-left: 0.5em;
+  margin-top: 0.5em;
   border: 1px solid rgba(128, 128, 128, 0.5);
   border-radius: 6px;
-  font-size: 0.6rem;
+  font-size: 0.6em;
   padding: 0 0.5em;
 }
 

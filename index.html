@@ -169,12 +169,14 @@
                 <div class="search-result-item__title">
                   {{ item.title }}
                 </div>
-                <div
-                  v-for="(tier, tierIndex) in item.tiers"
-                  class="search-result-item__tier"
-                  :class="'search-result-item__tier--type-' + tier"
-                >
-                  {{ item.tierNames[tierIndex] }}
+                <div class="search-result-item__tier-box">
+                  <div
+                    v-for="(tier, tierIndex) in item.tiers"
+                    class="search-result-item__tier"
+                    :class="'search-result-item__tier--type-' + tier"
+                  >
+                    {{ item.tierNames[tierIndex] }}
+                  </div>
                 </div>
               </div>
               <div class="search-result-item__stats">
