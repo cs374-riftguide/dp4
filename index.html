@@ -31,7 +31,7 @@
           v-if="currentPage === 'guide'"
           :guide="currentGuide"
           @guide-close="openPageSearch"
-        /></page-guide>
+        ></page-guide>
       </keep-alive>
     </div>
 
@@ -136,7 +136,7 @@
           :search-text="searchText"
           :is-search-text-too-short="isSearchTextTooShort"
           @guide-open="$emit('guide-open', ...arguments)"
-        ><search-results>
+        ></search-results>
       </div>
     </template>
 
