@@ -50,6 +50,10 @@
   text-align: center;
 }
 
+.page-guide__stats-item:not(:first-child) {
+  margin-left: 0.5rem;
+}
+
 .page-guide__section-expand-button {
   background-color: #a18e1f;
   border-color: #c98225;
