@@ -21,16 +21,18 @@
   <body>
     <div id="app">
       <h1 class="logo">RiftGuide</h1>
-      <page-search
-        v-if="currentPage === 'search'"
-        :guides="guides"
-        @guide-open="openPageGuide($event)"
-      ></page-search>
-      <page-guide
-        v-if="currentPage === 'guide'"
-        :guide="currentGuide"
-        @guide-close="openPageSearch"
-      /></page-guide>
+      <keep-alive include="page-search">
+        <page-search
+          v-if="currentPage === 'search'"
+          :guides="guides"
+          @guide-open="openPageGuide($event)"
+        ></page-search>
+        <page-guide
+          v-if="currentPage === 'guide'"
+          :guide="currentGuide"
+          @guide-close="openPageSearch"
+        /></page-guide>
+      </keep-alive>
     </div>
 
     <template id="template-page-guide">
