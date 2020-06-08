@@ -17,7 +17,9 @@ const App = Vue.extend({
      * @param {string} guideId
      */
     openPageGuide(guideId) {
-      const guideToView = this.guides.find((guide) => guide.id === guideId);
+      /** @type {Guide[]} */
+      const guides = this.guides;
+      const guideToView = guides.find((guide) => guide.id === guideId);
       if (!guideToView)
         throw new Error(`Cannot find guide with ID: '${guideId}'`);
       this.currentGuide = guideToView;

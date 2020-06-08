@@ -67,9 +67,9 @@ Vue.component("page-search", {
       // Show nothing if the search text is less than 2 characters long
       if (this.isSearchTextTooShort) return [];
 
-      return this.fuse
-        .search(this.searchText)
-        .map((resultItem) => resultItem.item);
+      /** @type {Fuse<Guide, Object>} */
+      const fuse = this.fuse;
+      return fuse.search(this.searchText).map((resultItem) => resultItem.item);
     },
     /**
      * Returns search results filtered by currently active tier filters.
