@@ -2,11 +2,12 @@
 
 .search-filter-box {
   display: flex;
-  padding: 10px 5px;
+  flex-wrap: wrap;
+  padding: 5px 0;
 }
 
 .search-filter-item {
-  margin: 0 3px;
+  margin: 3px;
   border: 1px solid black;
   border-radius: 6px;
   padding: 0 0.5em;
