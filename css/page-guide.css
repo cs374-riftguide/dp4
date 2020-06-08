@@ -64,6 +64,7 @@
   background-color: #a18e1f;
   border-color: #c98225;
   color: #fff;
+  cursor: pointer;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   border-radius: 10px;
@@ -72,6 +73,16 @@
   border: 1px solid transparent;
   font-weight: 900;
   font-size: 0.6rem;
+}
+
+.page-guide__section-expand-button:hover {
+  background-color: #dac96e;
+  border-color: black;
+}
+
+.page-guide__section-expand-button:active {
+  background-color: #706317;
+  border-color: black;
 }
 
 .page-guide__title {
