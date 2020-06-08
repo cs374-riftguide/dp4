@@ -10,6 +10,25 @@
   box-shadow: 1px 1px 10px black;
 }
 
+.page-guide__header {
+  display: flex;
+}
+
+.page-guide__close-button {
+  align-self: flex-start;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin-left: auto; /* Push the button to the right end */
+}
+
+.page-guide__close-button:hover {
+  background-color: #fff;
+  border-color: black;
+}
+
 .page-guide__author {
   font-style: italic;
   font-weight: bold;

@@ -21,12 +21,32 @@
   <body>
     <div id="app">
       <h1 class="logo">RiftGuide</h1>
-      <page-guide :guide="currentGuide" />
+      <keep-alive include="page-search">
+        <page-search
+          v-if="currentPage === 'search'"
+          :guides="guides"
+          @guide-open="openPageGuide($event)"
+        ></page-search>
+        <page-guide
+          v-if="currentPage === 'guide'"
+          :guide="currentGuide"
+          @guide-close="openPageSearch"
+        /></page-guide>
+      </keep-alive>
     </div>
 
     <template id="template-page-guide">
       <div class="page-guide">
-        <h2 class="page-guide__title">{{guide.title}}</h2>
+        <header class="page-guide__header">
+          <h2 class="page-guide__title">{{guide.title}}</h2>
+          <button
+            class="page-guide__close-button"
+            title="Close guide"
+            @click="$emit('guide-close')"
+          >
+            <i class="fas fa-arrow-circle-left"></i>
+          </button>
+        </header>
         <address class="page-guide__author">Author: {{guide.author}}</address>
         <div class="page-guide__body">
           <section
@@ -115,7 +135,8 @@
           :value="filteredSearchResults"
           :search-text="searchText"
           :is-search-text-too-short="isSearchTextTooShort"
-        />
+          @guide-open="$emit('guide-open', ...arguments)"
+        ><search-results>
       </div>
     </template>
 
@@ -150,6 +171,13 @@
                 >
                   {{ item.tier }}
                 </div>
+                <button
+                  class="search-result-item__open-button"
+                  title="View guide"
+                  @click="$emit('guide-open', item.id)"
+                >
+                  <i class="fas fa-arrow-right"></i>
+                </button>
               </div>
               <div class="search-result-item__stats">
                 <div class="search-result-item__stats-entry">
