@@ -3,4 +3,9 @@
     "checkJs": true,
     "target": "es2017",
   },
+  "typeAcquisition": {
+    "include": [
+      "vue-ls", // Indirectly acquire Vue.js types
+    ],
+  },
 }
