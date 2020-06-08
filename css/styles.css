@@ -1,7 +1,10 @@
 body {
+  background-attachment: fixed;
+  background-color: #a09289; /* In case the image fails to load */
   background-image: url("../images/main1.jpg");
+  background-position: center top;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto max(100vh, 800px);
   font-family: "Noto Sans KR", "Roboto", sans-serif;
 }
 
