@@ -81,16 +81,16 @@
         </div>
         <div class="page-guide__stats">
           <div class="page-guide__stats-item">
-            posted date: {{ dateToString(guide.createdAt) }}
+            Posted: {{ dateToString(guide.createdAt) }}
           </div>
           <div class="page-guide__stats-item">
-            views: {{guide.views}}
+            Views: {{ guide.views }}
           </div>
           <div class="page-guide__stats-item">
-            upvotes: {{guide.upvotes}}
+            Upvotes: {{ guide.upvotes }}
           </div>
           <div class="page-guide__stats-item">
-            downvotes: {{guide.downvotes}}
+            Downvotes: {{ guide.downvotes }}
           </div>
         </div>
       </div>
@@ -181,10 +181,10 @@
               </div>
               <div class="search-result-item__stats">
                 <div class="search-result-item__stats-entry">
-                  Views: {{ item.views }}
+                  Posted: {{ dateToString(item.createdAtDate) }}
                 </div>
                 <div class="search-result-item__stats-entry">
-                  Created: {{ dateToString(item.createdAtDate) }}
+                  Views: {{ item.views }}
                 </div>
                 <div class="search-result-item__stats-entry">
                   Upvotes: {{ item.upvotes }}
