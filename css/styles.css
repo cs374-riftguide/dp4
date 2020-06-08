@@ -6,12 +6,37 @@ body {
   background-repeat: no-repeat;
   background-size: auto max(100vh, 800px);
   font-family: "Noto Sans KR", "Roboto", sans-serif;
+  margin: 0; /* Reset margins so that .site-header fills 100% of horizontal view */
+}
+
+.site-header {
+  align-items: center;
+  background-color: #9b416e;
+  background-image: linear-gradient(#9b416e 50%, #703352 100%);
+  display: flex;
+  height: 6rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.site-header__title {
+  color: #deb887;
+  font-size: 3rem;
+  margin: 0;
+  text-align: center;
+  text-shadow: 1px 1px 5px black;
 }
 
 #app {
   max-width: 800px;
-  /* Center alignment */
-  margin: auto;
+}
+
+.site-main {
+  background-color: rgba(228, 228, 170, 0.8);
+  border-radius: 20px;
+  box-shadow: 1px 1px 10px black;
+  margin: auto; /* Center alignment */
+  padding: 2rem;
 }
 
 :root {
@@ -19,12 +44,12 @@ body {
   --tier-text-color-iron: #fff;
   --tier-bgcolor-bronze: #732;
   --tier-text-color-bronze: #fff;
-  --tier-bgcolor-silver: #999;
+  --tier-bgcolor-silver: #777;
   --tier-text-color-silver: #fff;
   --tier-bgcolor-gold: #ca0;
   --tier-text-color-gold: #fff;
   --tier-bgcolor-platinum: #bbb;
-  --tier-text-color-platinum: #fff;
+  --tier-text-color-platinum: #000;
   --tier-bgcolor-diamond: #eee;
   --tier-text-color-diamond: #000;
   --tier-bgcolor-master: #fac;
@@ -33,11 +58,4 @@ body {
   --tier-text-color-grandmaster: #fff;
   --tier-bgcolor-challenger: #808;
   --tier-text-color-challenger: #fff;
-}
-
-.logo {
-  text-shadow: 1px 1px 5px black;
-  color: burlywood;
-  font-size: 40px;
-  padding: 20px;
 }

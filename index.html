@@ -19,8 +19,10 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <div id="app">
-      <h1 class="logo">RiftGuide</h1>
+    <header class="site-header">
+      <h1 class="site-header__title">RiftGuide</h1>
+    </header>
+    <main id="app" class="site-main">
       <keep-alive include="page-search">
         <page-search
           v-if="currentPage === 'search'"
@@ -33,7 +35,7 @@
           @guide-close="openPageSearch"
         ></page-guide>
       </keep-alive>
-    </div>
+    </main>
 
     <template id="template-page-guide">
       <div class="page-guide">
@@ -173,13 +175,6 @@
                 >
                   {{ item.tierName }}
                 </div>
-                <button
-                  class="search-result-item__open-button"
-                  title="View guide"
-                  @click="$emit('guide-open', item.id)"
-                >
-                  <i class="fas fa-arrow-right"></i>
-                </button>
               </div>
               <div class="search-result-item__stats">
                 <div class="search-result-item__stats-entry">
@@ -201,6 +196,13 @@
                 {{ contentType }}
               </div>
             </div>
+            <button
+              class="search-result-item__open-button"
+              title="View guide"
+              @click="$emit('guide-open', item.id)"
+            >
+              <i class="fas fa-arrow-right"></i>
+            </button>
           </div>
         </template>
       </div>
