@@ -1,14 +1,14 @@
 body {
+  background-attachment: fixed;
+  background-color: #a09289; /* In case the image fails to load */
   background-image: url("../images/main1.jpg");
+  background-position: center top;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto max(100vh, 800px);
   font-family: "Noto Sans KR", "Roboto", sans-serif;
 }
 
 #app {
-  /* For debugging */
-  border: 1px dotted black;
-  box-sizing: border-box;
   max-width: 800px;
   /* Center alignment */
   margin: auto;

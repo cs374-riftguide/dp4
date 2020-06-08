@@ -37,6 +37,7 @@ interface SearchResultItem {
   id: string;
   title: string;
   tier: GuideTier;
+  tierName: string;
   author: string;
   createdAtDate: Date;
   upvotes: number;

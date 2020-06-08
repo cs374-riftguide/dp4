@@ -7,6 +7,7 @@
 /// <reference path="./index.d.ts" />
 
 Vue.component("page-guide", {
+  mixins: [MixinDate],
   props: {
     guide: Object,
   },

@@ -53,14 +53,16 @@
             v-for="(sentence, index) in guide.content"
             class="page-guide__section"
           >
-            {{sentence.summary}}
-            <button
-              v-if="sentence.type !== 'empty'"
-              v-on:click="toggleSection(index)"
-              class="page-guide__section-expand-button"
-            >
-              {{ sentence.type === 'text' ? 'Details' : 'Video' }}
-            </button>
+            <h3 class="page-guide__section-title">
+              {{sentence.summary}}
+              <button
+                v-if="sentence.type !== 'empty'"
+                v-on:click="toggleSection(index)"
+                class="page-guide__section-expand-button"
+              >
+                {{ sentence.type === 'text' ? 'Details' : 'Video' }}
+              </button>
+            </h3>
             <div v-show="hideOrShow[index]" class="page-guide__section-details">
               <div v-if="sentence.type === 'text'">
                 {{sentence.content}}
@@ -81,16 +83,16 @@
         </div>
         <div class="page-guide__stats">
           <div class="page-guide__stats-item">
-            posted date: {{guide.createdAt}}
+            Posted: {{ dateToString(guide.createdAt) }}
           </div>
           <div class="page-guide__stats-item">
-            views: {{guide.views}}
+            Views: {{ guide.views }}
           </div>
           <div class="page-guide__stats-item">
-            upvotes: {{guide.upvotes}}
+            Upvotes: {{ guide.upvotes }}
           </div>
           <div class="page-guide__stats-item">
-            downvotes: {{guide.downvotes}}
+            Downvotes: {{ guide.downvotes }}
           </div>
         </div>
       </div>
@@ -169,7 +171,7 @@
                   class="search-result-item__tier"
                   :class="'search-result-item__tier--type-' + item.tier"
                 >
-                  {{ item.tier }}
+                  {{ item.tierName }}
                 </div>
                 <button
                   class="search-result-item__open-button"
@@ -181,11 +183,10 @@
               </div>
               <div class="search-result-item__stats">
                 <div class="search-result-item__stats-entry">
-                  Views: {{ item.views }}
+                  Posted: {{ dateToString(item.createdAtDate) }}
                 </div>
                 <div class="search-result-item__stats-entry">
-                  Created: {{ item.createdAtDate.toLocaleDateString({}, {
-                  dateStyle: 'long' }) }}
+                  Views: {{ item.views }}
                 </div>
                 <div class="search-result-item__stats-entry">
                   Upvotes: {{ item.upvotes }}
@@ -210,6 +211,8 @@
     <!-- Development version with all features -->
     <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
     <script src="./js/data.js"></script>
+    <!-- Mixin scripts must come before component scripts -->
+    <script src="./js/mixin-date.js"></script>
     <!-- Component scripts must come before the main app script -->
     <script src="./js/page-guide.js"></script>
     <script src="./js/page-search.js"></script>
