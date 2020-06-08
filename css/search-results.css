@@ -40,7 +40,7 @@
 
 .search-result-item__tier {
   margin-left: 0.5em;
-  border: 1px solid black;
+  border: 1px solid rgba(128, 128, 128, 0.5);
   border-radius: 6px;
   padding: 0 0.5em;
 }

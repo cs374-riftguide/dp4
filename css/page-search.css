@@ -8,10 +8,20 @@
 
 .search-filter-item {
   margin: 3px;
-  border: 1px solid black;
+  border: 1px solid rgba(128, 128, 128, 0.5);
   border-radius: 6px;
   padding: 0 0.5em;
   font-size: 75%;
+}
+
+.search-filter-item:hover {
+  border-color: #0ae;
+  filter: brightness(1.15);
+}
+
+.search-filter-item:active {
+  border-color: #08c;
+  filter: brightness(0.85);
 }
 
 .search-filter-item > label {
