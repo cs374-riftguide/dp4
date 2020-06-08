@@ -17,5 +17,6 @@ Our project uses the following frameworks and libraries.
 * [Google Web Fonts](https://fonts.google.com/) for fonts
 * [Font Awesome](https://fontawesome.com/) for icons
 
-##background image
-http://www.win4000.com/wallpaper_big_139912.html
+## Third-Party Assets
+
+Background images were taken from http://www.win4000.com/wallpaper_big_139912.html
