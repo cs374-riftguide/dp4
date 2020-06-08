@@ -22,7 +22,7 @@
     <header class="site-header">
       <h1 class="site-header__title">RiftGuide</h1>
     </header>
-    <div id="app" class="site-main">
+    <main id="app" class="site-main">
       <keep-alive include="page-search">
         <page-search
           v-if="currentPage === 'search'"
@@ -35,7 +35,7 @@
           @guide-close="openPageSearch"
         ></page-guide>
       </keep-alive>
-    </div>
+    </main>
 
     <template id="template-page-guide">
       <div class="page-guide">
