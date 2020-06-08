@@ -38,14 +38,15 @@
 }
 
 .page-guide__stats {
+  border-top: 1px dotted #999;
   display: flex;
+  padding-top: 0.5rem;
 }
 
 .page-guide__stats-item {
-  flex-grow: 0;
-  background-color: rgb(224, 218, 127);
-  border-radius: 20px;
-  padding: 10px;
+  color: #336;
+  flex: 1;
+  font-size: 0.8rem;
   text-align: center;
 }
 

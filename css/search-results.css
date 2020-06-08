@@ -110,6 +110,7 @@
 }
 
 .search-result-item__stats-entry {
+  color: #336;
   flex: 1;
 }
 
