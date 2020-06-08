@@ -4,6 +4,7 @@
  */
 
 Vue.component("search-results", {
+  mixins: [MixinDate],
   props: {
     value: Array,
     searchText: String,

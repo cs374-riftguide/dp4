@@ -184,8 +184,7 @@
                   Views: {{ item.views }}
                 </div>
                 <div class="search-result-item__stats-entry">
-                  Created: {{ item.createdAtDate.toLocaleDateString({}, {
-                  dateStyle: 'long' }) }}
+                  Created: {{ dateToString(item.createdAtDate) }}
                 </div>
                 <div class="search-result-item__stats-entry">
                   Upvotes: {{ item.upvotes }}
@@ -210,6 +209,8 @@
     <!-- Development version with all features -->
     <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
     <script src="./js/data.js"></script>
+    <!-- Mixin scripts must come before component scripts -->
+    <script src="./js/mixin-date.js"></script>
     <!-- Component scripts must come before the main app script -->
     <script src="./js/page-guide.js"></script>
     <script src="./js/page-search.js"></script>
