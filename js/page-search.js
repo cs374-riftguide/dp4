@@ -4,6 +4,7 @@
  */
 
 /// <reference path="./index.d.ts" />
+/// <reference path="./fuse.d.ts" />
 
 const tierFilterTypes = {
   iron: {
@@ -107,8 +108,10 @@ Vue.component("page-search", {
     },
   },
   mounted() {
+    /** @type {Guide[]} */
+    const guides = this.guides;
     // Initialize Fuse.js
-    this.fuse = new Fuse(this.guides, {
+    this.fuse = new Fuse(guides, {
       keys: [
         "title",
         "author",
