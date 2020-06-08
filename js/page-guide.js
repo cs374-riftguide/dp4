@@ -7,7 +7,6 @@
 /// <reference path="./index.d.ts" />
 
 Vue.component("page-guide", {
-  template: "#template-page-guide",
   props: {
     guide: Object,
   },
@@ -15,6 +14,13 @@ Vue.component("page-guide", {
     return {
       hideOrShow: [],
     };
+  },
+  watch: {
+    guide(newGuide) {
+      // Replace hideOrShow with a new array which contains the same number of
+      // elements as the guide.content array.
+      this.hideOrShow = new Array(newGuide.content.length);
+    },
   },
   methods: {
     /**
@@ -25,11 +31,5 @@ Vue.component("page-guide", {
       Vue.set(this.hideOrShow, sectionIndex, !this.hideOrShow[sectionIndex]);
     },
   },
-  watch: {
-    guide(newGuide) {
-      // Replace hideOrShow with a new array which contains the same number of
-      // elements as the guide.content array.
-      this.hideOrShow = new Array(newGuide.content.length);
-    },
-  },
+  template: "#template-page-guide",
 });

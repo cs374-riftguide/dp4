@@ -4,7 +4,6 @@
  */
 
 Vue.component("search-results", {
-  template: "#template-search-results",
   props: {
     value: Array,
     searchText: String,
@@ -13,4 +12,5 @@ Vue.component("search-results", {
       default: true,
     },
   },
+  template: "#template-search-results",
 });
