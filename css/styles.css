@@ -29,8 +29,14 @@ body {
 
 #app {
   max-width: 800px;
-  /* Center alignment */
-  margin: auto;
+}
+
+.site-main {
+  background-color: rgba(228, 228, 170, 0.8);
+  border-radius: 20px;
+  box-shadow: 1px 1px 10px black;
+  margin: auto; /* Center alignment */
+  padding: 2rem;
 }
 
 :root {

@@ -1,13 +1,6 @@
 /* Styles for the page-guide component. */
 
 .page-guide {
-  background-color: lightgoldenrodyellow;
-  padding: 10px;
-  padding-bottom: 1.5em;
-  margin: 20px;
-  opacity: 70%;
-  border-radius: 20px;
-  box-shadow: 1px 1px 10px black;
 }
 
 .page-guide__header {
