@@ -44,12 +44,12 @@ body {
   --tier-text-color-iron: #fff;
   --tier-bgcolor-bronze: #732;
   --tier-text-color-bronze: #fff;
-  --tier-bgcolor-silver: #999;
+  --tier-bgcolor-silver: #777;
   --tier-text-color-silver: #fff;
   --tier-bgcolor-gold: #ca0;
   --tier-text-color-gold: #fff;
   --tier-bgcolor-platinum: #bbb;
-  --tier-text-color-platinum: #fff;
+  --tier-text-color-platinum: #000;
   --tier-bgcolor-diamond: #eee;
   --tier-text-color-diamond: #000;
   --tier-bgcolor-master: #fac;
